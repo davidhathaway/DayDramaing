@@ -11,7 +11,7 @@ namespace DayDramaing.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
-
+            ViewBag.Title = "Day Drama-ing";
             return View();
         }
 
