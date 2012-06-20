@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace DayDramaing.Controllers
 {
-    public class OrderController : Controller
+    public class BookController : Controller
     {
         //
-        // GET: /Order/
+        // GET: /Book/
 
         public ActionResult Index()
         {

@@ -1,0 +1,106 @@
+﻿#wrapper
+{
+    font-family:"Lucida Sans Unicode","Lucida Grande",garuda,sans-serif;
+    font-size:13px;
+    line-height:21px;
+    color:#424242
+}
+
+#header
+{
+    height: 200px;
+    border-bottom: 1px solid #000;
+    background-image: url('images/header-background.gif');
+}
+
+#header-left, #header-right {
+    position: relative;
+    z-index: 10;
+}
+
+#header-left {
+	padding-top: 16px;
+}
+#header-right {
+	float: right;
+}
+
+#homepage-content {
+	min-height: 400px;
+	
+}
+
+#footer
+{
+    background:url('images/footer-shadow.png') no-repeat top center #a5a5a5;
+    color:white;
+    padding:25px 0 120px 0;
+    margin-top:50px
+}
+ 
+#nav
+{
+	margin-left: 10px;
+    position: absolute;
+    right: 10px;
+    font-family: bryant-web-1, bryant-web-2, sans-serif;
+}
+#nav ul
+{
+    display: block;
+    margin: 50px 0 0 0;
+    padding: 0;
+}
+#nav li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+}
+#nav li a
+{
+    text-decoration: none;
+    text-shadow: none;
+    padding: 10px 10px;
+    color: #FB7578;
+    font-size: 1.213em;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+#nav li a:hover
+{
+    background-color: #F2F2F2;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+#nav li a:actve
+{
+    background-color: #4D4D4D;
+}
+
+#logo 
+{
+    margin-top: 25px;
+	font-size: 70px;
+	font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
+}
+#logo a, #logo a:hover, #logo a:active
+{
+    line-height: 0.9em !important;
+    background: none;
+    color: #F94F53;
+    outline: none;
+    text-decoration: none;
+    text-shadow: 0.02em 0.02em #333;
+}
+
+.floatleft {
+    float: left;
+    margin: 0 15px 10px 0 !important;
+}
+.floatright {
+    float: right;
+    margin: 0 0 10px 15px !important;
+}
