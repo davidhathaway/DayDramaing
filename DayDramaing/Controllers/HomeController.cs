@@ -43,7 +43,7 @@ namespace DayDramaing.Controllers
 
                     //send msg
                     var smtpClient = new SmtpClient();
-                    var msg = new MailMessage(to, to, subject, body);
+                    var msg = new MailMessage(from, to, subject, body);
                     smtpClient.Send(msg);            
                     return RedirectToAction("ContactSuccess");
                 }
