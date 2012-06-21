@@ -39,17 +39,17 @@ namespace DayDramaing.Controllers
                     var from = model.Email;
                     var to = "info@daydrama-ing.co.uk";
                     var subject = "Contact Form:";
-                    var body = string.Format("Enquiry:{0}Name: {1}{0}Telephone: {2}{0}Details: {3}", Environment.NewLine, model.Name, model.Telephone, model.Enquiry);
+                    var body = string.Format("Enquiry:{0}Name: {1}{0}Email :{2}{0}Telephone: {3}{0}Details: {4}", Environment.NewLine, model.Name, model.Email, model.Telephone, model.Enquiry);
 
                     //send msg
                     var smtpClient = new SmtpClient();
-                    var msg = new MailMessage(from, to, subject, body);
-                    smtpClient.Send(msg);
+                    var msg = new MailMessage(to, to, subject, body);
+                    smtpClient.Send(msg);            
                     return RedirectToAction("ContactSuccess");
                 }
                 catch (Exception ex)
                 {
-                    ModelState.AddModelError("Error:", "There was an error sending your contact details.");
+                    ModelState.AddModelError("Error:", "There was an error sending your contact details : " + ex.Message);
                     return View(model);
                 }
             }
