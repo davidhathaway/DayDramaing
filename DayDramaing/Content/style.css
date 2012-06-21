@@ -91,7 +91,7 @@
 {
     line-height: 0.9em !important;
     background: none;
-    color: #000000;
+    color: #353535;
     outline: none;
     text-decoration: none;
     text-shadow: 0.02em 0.02em #333;
@@ -124,10 +124,12 @@
     color: #333333;
     margin-top: -13px;
     overflow: hidden;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     display: block;
-    font-family: adelle-1,adelle-2,serif;
+    font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
     font-size: 1.4em;
     font-weight: 400;
     line-height: 1.4em;
@@ -139,4 +141,29 @@
 	
 	margin-top: 1em;
 	padding: 0.6em;
+}
+
+.page-title h2 {
+	
+	margin-top: 1em;
+	padding: 0.5em;
+}
+
+.single-col {
+	
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    margin-top: 1em;
+    line-height: 1.4em;
+    text-align: left;
+    background-color: #FFFFFF;
+}
+
+.single-col p 
+{
+    margin-top: 1em;
+    padding: 0.6em;
 }
