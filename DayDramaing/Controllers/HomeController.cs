@@ -36,8 +36,8 @@ namespace DayDramaing.Controllers
             {
                 try
                 {
-                    var from = model.Email;
-                    var to = "david.hathaway@capita.co.uk";
+                    var from = "postmaster@app685.mailgun.org";
+                    var to = "info@daydrama-ing.co.uk";
                     var subject = "Contact Form:";
                     var body = string.Format("Enquiry:{0}Name: {1}{0}Email :{2}{0}Telephone: {3}{0}Details: {4}", Environment.NewLine, model.Name, model.Email, model.Telephone, model.Enquiry);
 
