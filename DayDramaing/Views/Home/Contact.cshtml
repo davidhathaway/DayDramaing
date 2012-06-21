@@ -1,4 +1,6 @@
-﻿@{
+﻿@model ContactModel
+           
+@{
     ViewBag.Title = "Contact";
 }
 
@@ -9,7 +11,7 @@
 </div>
 
 <div class="single-col grid_8">
-    <p>Contact form - (will use probably use email)</p>
+    @Html.Partial("ContactForm", Model)
 </div>
 
 <div class="single-col grid_8">
