@@ -62,7 +62,7 @@
     text-decoration: none;
     text-shadow: none;
     padding: 10px 10px;
-    color: #FB7578;
+    color: #F4F4F4;
     font-size: 1.213em;
     border-radius: 0;
     -moz-border-radius: 0;
@@ -70,6 +70,7 @@
 }
 #nav li a:hover
 {
+    color: #000000;
     background-color: #F2F2F2;
     border-radius: 4px;
     -moz-border-radius: 4px;
