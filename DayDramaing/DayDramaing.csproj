@@ -81,6 +81,7 @@
     <Content Include="Content\grid\text.css" />
     <Content Include="Content\images\footer-shadow.png" />
     <Content Include="Content\images\header-background.gif" />
+    <Content Include="Content\images\header-background.jpg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
