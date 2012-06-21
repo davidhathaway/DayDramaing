@@ -96,6 +96,13 @@
     text-decoration: none;
     text-shadow: 0.02em 0.02em #333;
 }
+.logo-sub
+{
+    color: #F973B9;
+    font-size: 20px;
+    font-style: italic;
+    font-variant: normal;
+}
 
 .floatleft {
     float: left;
@@ -164,8 +171,8 @@
 
 .single-col p 
 {
-    margin-top: 1em;
-    padding: 0.6em;
+    margin: 1em;
+    padding: 0.2em;
 }
 
 .single-col fieldset 
