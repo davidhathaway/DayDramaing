@@ -1,0 +1,87 @@
+﻿@model DayDramaing.Models.BookModel
+
+@using (Html.BeginForm("Book", "Book"))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Book</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+       
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+              @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+          
+            
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Telephone)
+            @Html.ValidationMessageFor(model => model.Telephone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Telephone)
+            
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NameOfSchool)
+            @Html.ValidationMessageFor(model => model.NameOfSchool)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NameOfSchool)
+            
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.YourLocation)
+            @Html.ValidationMessageFor(model => model.YourLocation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.YourLocation)
+           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.When)
+            @Html.ValidationMessageFor(model => model.When)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.When)
+         
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.What)
+            @Html.ValidationMessageFor(model => model.What)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.What)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CaptchaValid)
+            @Html.ValidationMessageFor(model => model.CaptchaValid)
+        </div>
+        <div class="editor-field">
+            @Html.GenerateCaptcha()
+            
+        </div>
+
+        <div class="button">
+            <input type="submit" value="Book" />
+        </div>
+  
+        
+    </fieldset>
+}

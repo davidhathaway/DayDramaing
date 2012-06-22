@@ -36,15 +36,11 @@ namespace DayDramaing.Controllers
             {
                 try
                 {
-                    var from = "postmaster@app685.mailgun.org";
-                    var to = "info@daydrama-ing.co.uk";
-                    var subject = "Contact Form:";
                     var body = string.Format("Enquiry from Contact form is as follows:{0}{0}Name: {1}{0}Email : {2}{0}Telephone: {3}{0}Details: {0}{0}{4}", Environment.NewLine, model.Name, model.Email, model.Telephone, model.Enquiry);
 
                     //send msg
-                    var smtpClient = new SmtpClient();
-                    var msg = new MailMessage(from, to, subject, body);
-                    smtpClient.Send(msg);            
+                    EmailHelper.SendContactEmail(body);
+        
                     return RedirectToAction("ContactSuccess");
                 }
                 catch (Exception ex)

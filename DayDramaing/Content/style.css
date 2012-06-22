@@ -226,7 +226,7 @@ fieldset {
     {
         min-height:  200px;
     }
-    
+
 
         fieldset input[type="text"]:focus,
         fieldset input[type="password"]:focus {
@@ -242,3 +242,55 @@ fieldset {
         padding: 7px;
         width: 150px;
     }
+    
+    
+#book fieldset textarea 
+{
+    min-height: 100px !important;
+}
+#book fieldset label
+{
+    display: inline;
+}
+
+#book .field-validation-error {
+	display: inline;
+}
+
+.error {
+    color: #e80c4d;
+}
+
+/* styles for validation helpers */
+.field-validation-error
+{
+    color: #e80c4d;
+    display: block;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input[type="text"].input-validation-error, input[type="password"].input-validation-error, textarea.input-validation-error
+
+{
+    border: 1px solid #e80c4d;
+    background-color: #EEDBFF;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.button {
+	margin : 1em 0 1em 0em;
+}

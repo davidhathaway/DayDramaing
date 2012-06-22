@@ -1,4 +1,6 @@
-﻿@{
+﻿@model DayDramaing.Models.BookModel
+           
+@{
     ViewBag.Title = "Index";
 }
 
@@ -7,9 +9,10 @@
 </div>
 
 
-<div class="single-col grid_16">
+<div id="book" class="single-col grid_16">
 
-    <p>Booking form - (will use probably use email)</p>
+
+    @Html.Partial("BookForm", Model)
 
 </div>
 

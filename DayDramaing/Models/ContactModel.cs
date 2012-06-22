@@ -8,26 +8,26 @@ namespace DayDramaing.Models
 {
     public class ContactModel
     {
-        [Display(Name="Name")]
+        [Display(Name="Your name*")]
         [DataType(DataType.Text)]
-        [Required]
+        [Required(ErrorMessage = "This is a required field*")]
         public string Name { get; set; }
 
-        [Display(Name = "Email")]
-        [Required]
+        [Display(Name = "Your email*")]
+        [Required(ErrorMessage = "This is a required field*")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Display(Name = "Telephone")]
+        [Display(Name = "Telephone number")]
         [DataType(DataType.PhoneNumber)]
         public string Telephone { get; set; }
 
-        [Display(Name = "Enquiry")]
+        [Display(Name = "Enquiry*")]
         [DataType(DataType.MultilineText)]
-        [Required]
+        [Required(ErrorMessage = "This is a required field*")]
         public string Enquiry { get; set; }
 
-        [Display(Name = "I'm not a robot")]
+        [Display(Name = "Verify your a human*")]
         public bool CaptchaValid { get; set; }
     }
 }
