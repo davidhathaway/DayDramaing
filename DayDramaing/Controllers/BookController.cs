@@ -50,7 +50,7 @@ namespace DayDramaing.Controllers
 
                     EmailHelper.SendBookingEmail(body);
 
-                    return RedirectToAction("BookingSuccess")
+                    return RedirectToAction("BookingSuccess");
                 }
                 catch (Exception ex)
                 {
