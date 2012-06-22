@@ -1,6 +1,4 @@
-﻿@model DayDramaing.Models.BookModel
-
-@{
+﻿@{
     ViewBag.Title = "BookingSuccess";
 }
 
@@ -12,64 +10,7 @@
 
 <div id="success" class="single-col grid_16">
 
-<p>Your booking information has been recived - We will be in touch as soon.</p>
-
-<fieldset>
-    <legend>Book</legend>
-
-    <div class="display-label">
-        @Html.LabelFor(model => model.Name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
-
-    <div class="display-label">
-        @Html.LabelFor(model => model.Email)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Email)
-    </div>
-
-    <div class="display-label">
-        @Html.LabelFor(model => model.Telephone)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Telephone)
-    </div>
-
-    <div class="display-label">
-        @Html.LabelFor(model => model.NameOfSchool)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NameOfSchool)
-    </div>
-
-    <div class="display-label">
-        @Html.LabelFor(model => model.YourLocation)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.YourLocation)
-    </div>
-
-    <div class="display-label">
-        @Html.LabelFor(model => model.What)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.What)
-    </div>
-
-    <div class="display-label">
-        @Html.LabelFor(model => model.When)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.When)
-    </div>
-
-</fieldset>
-
-<p>
-    @Html.ActionLink("Finish", "Index","Home")
-</p>
+    <p>Your booking information has been recived - We will be in touch as soon.</p>
 
 </div>
+

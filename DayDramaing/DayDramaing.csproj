@@ -230,6 +230,9 @@
     <Content Include="Views\Book\BookForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Book\BookingSuccessWithModel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Views\Book\BookingSuccess.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

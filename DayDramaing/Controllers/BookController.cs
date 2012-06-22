@@ -50,7 +50,7 @@ namespace DayDramaing.Controllers
 
                     EmailHelper.SendBookingEmail(body);
 
-                    return BookingSuccess(model);
+                    return RedirectToAction("BookingSuccess")
                 }
                 catch (Exception ex)
                 {
@@ -62,9 +62,9 @@ namespace DayDramaing.Controllers
             return View(model);
         }
 
-        public ActionResult BookingSuccess(BookModel model) 
+        public ActionResult BookingSuccess() 
         {
-            return View(model);
+            return View();
         }
 
         
