@@ -6,15 +6,35 @@ using System.Web.Mvc;
 using DayDramaing.Models;
 using DayDramaing.Common;
 using System.Net.Mail;
+using DayDramaing.Service.Services;
+using DayDramaing.Domain.Models;
 
 namespace DayDramaing.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController<WebContent, IWebContentService>
     {
+        protected override IWebContentService CreateService()
+        {
+            return new WebContentService(ModelStateWrapper);
+        }
+
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
-            ViewBag.Title = "Day Drama-ing";
+
+            try
+            {
+                var any = Service.FindAll().ToList();
+
+                if (any.Count > 0)
+                {
+                    ViewBag.Title = "Day Drama-ing";
+                }
+            }
+            catch (Exception ex)
+            {
+               
+            }
+
             return View();
         }
 
@@ -57,5 +77,7 @@ namespace DayDramaing.Controllers
         {
             return View();
         }
+
+     
     }
 }

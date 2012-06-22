@@ -73,6 +73,7 @@
     <Compile Include="Common\EmailHelper.cs" />
     <Compile Include="Common\HtmlHelpers.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -234,6 +235,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Book\BookingSuccess.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DayDramaing.Core\DayDramaing.Core.csproj">
+      <Project>{A9F62ABA-EAA8-44B6-8727-C64776EE9B5F}</Project>
+      <Name>DayDramaing.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DayDramaing.Domain\DayDramaing.Domain.csproj">
+      <Project>{505C0A37-543A-441C-90A1-653D92627E62}</Project>
+      <Name>DayDramaing.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DayDramaing.Service\DayDramaing.Service.csproj">
+      <Project>{3A96A043-BDBB-4E44-A80B-B3673B89BEFA}</Project>
+      <Name>DayDramaing.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

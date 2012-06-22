@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using DayDramaing.Domain.Models;
+using System.Data.Entity;
 
 namespace DayDramaing
 {
@@ -35,6 +37,14 @@ namespace DayDramaing
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            try
+            {
+                Database.SetInitializer<DayDramaingDBContext>(new DayDramaingInitialiser());
+            }
+            catch
+            {
+            }
         }
     }
 }
