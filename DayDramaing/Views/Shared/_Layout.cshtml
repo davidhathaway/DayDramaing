@@ -3,6 +3,7 @@
 <head>
     @{
         string title = ViewBag.Title;
+        Exception error = ViewBag.Error;
     }
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -23,7 +24,12 @@
 
 </head>
     <body id="page-home">
-  
+
+    @if (error != null)
+    {
+        @Html.Raw(error.ToString())
+    }
+
     <div id="wrapper">
 
         <div id="header">

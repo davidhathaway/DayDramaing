@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity;
+using DayDramaing.Domain.Migrations;
 
 namespace DayDramaing.Domain.Models
 {
@@ -18,26 +19,7 @@ namespace DayDramaing.Domain.Models
         }
     }
 
-    public class DayDramaingInitialiser 
-        :
-#if DEBUG
-        DropCreateDatabaseAlways<DayDramaingDBContext> 
-#else
-        CreateDatabaseIfNotExists<DayDramaingDBContext> 
-#endif
+    public class DayDramaingInitialiser : MigrateDatabaseToLatestVersion<DayDramaingDBContext, Configuration>
     {
-        public DayDramaingInitialiser()
-        {
-        }
-
-        protected override void Seed(DayDramaingDBContext context)
-        {
-
-            context.WebContents.Add(new WebContent() { Name = "Intro", RawHTML = "Intro" });
-
-            context.SaveChanges();
-
-            base.Seed(context);
-        }
-    }
+            }
 }

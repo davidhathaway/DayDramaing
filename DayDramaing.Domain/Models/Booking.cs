@@ -16,5 +16,6 @@ namespace DayDramaing.Domain.Models
         public string YourLocation { get; set; }
         public string What { get; set; }
         public string When { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 }

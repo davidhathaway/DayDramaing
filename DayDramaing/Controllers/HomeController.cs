@@ -32,7 +32,8 @@ namespace DayDramaing.Controllers
             }
             catch (Exception ex)
             {
-               
+                ViewBag.Title = "Error";
+                ViewBag.Error = ex;
             }
 
             return View();

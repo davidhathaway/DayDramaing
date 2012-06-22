@@ -7,6 +7,7 @@ using System.Web.Routing;
 using DayDramaing.Domain.Models;
 using System.Data.Entity;
 
+
 namespace DayDramaing
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -40,11 +41,20 @@ namespace DayDramaing
 
             try
             {
-                Database.SetInitializer<DayDramaingDBContext>(new DayDramaingInitialiser());
+                Bootstrapper.Start();
             }
             catch
             {
             }
         }
     }
+
+    public static class Bootstrapper
+    {
+        public static void Start()
+        {
+            Database.SetInitializer(new DayDramaingInitialiser());
+        }
+    }
+
 }
