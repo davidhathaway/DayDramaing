@@ -21,7 +21,7 @@ namespace DayDramaing.Controllers
 
         [CaptchaValidatorAttribute]
         [HttpPost]
-        public ActionResult Book(BookModel model)
+        public ActionResult Index(BookModel model)
         {
             if (ModelState.IsValid)
             {

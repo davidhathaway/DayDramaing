@@ -4,6 +4,28 @@
     ViewBag.Title = "Error";
 }
 
-<h2>
-    Sorry, an error occurred while processing your request.
-</h2>
+
+
+<div class="page-title intro grid_16">
+    
+    <h2> Sorry, an error occurred while processing your request.</h2>
+
+</div>
+
+<div class="single-col grid_8">
+
+    <fieldset>
+        <legend>Exception Details</legend>
+        <div class="editor-label">
+            Exception
+        </div>
+        <div class="editor-field">
+            @Html.TextArea("Exception",  @Model.Exception.ToString())
+        </div>   
+    </fieldset>
+   
+
+
+</div>
+
+
