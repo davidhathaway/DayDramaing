@@ -20,14 +20,17 @@ namespace DayDramaing.Controllers
 
         public ActionResult Index()
         {
-
+            var model = new HomeModel();
             try
             {
-                var any = Service.FindAll().ToList();
+             
+                var intro = Service.FindFirst(x => x.Name == "HomeIntro");
+                var pageTitle = Service.FindFirst(x => x.Name == "HomeTitle");
 
-                if (any.Count > 0)
+                if (intro != null && pageTitle!=null)
                 {
-                    ViewBag.Title = "Day Drama-ing";
+                    model.Intro = intro.RawHTML;
+                    model.PageTitle = pageTitle.RawHTML;
                 }
             }
             catch (Exception ex)
@@ -36,7 +39,7 @@ namespace DayDramaing.Controllers
                 ViewBag.Error = ex;
             }
 
-            return View();
+            return View(model);
         }
 
         public ActionResult About()

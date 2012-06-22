@@ -1,10 +1,12 @@
-﻿<div class="page-title intro grid_16">
-    <h2>Book now!</h2>
+﻿@model HomeModel 
+           
+<div class="page-title intro grid_16">
+    <h2>@Html.Raw(Model.Intro)</h2>
 </div>
 
 <div class="single-col grid_16">
-
-<p>
+    @Html.Raw(Model.PageTitle)
+@*<p>
 We provide a range of innovative quality interactive drama workshops, assemblies and Play in a Day for schools and drama workshops and role play for organisations to develop educational, professional, personal, social and creative development.
 </p>
 <p>
@@ -15,5 +17,6 @@ Our drama work with adult groups or organisations is varied – we offer bespoke
 </p>
 <p>
 Hopefully you will get as much enjoyment from our work as we do.
-</p>
+</p>*@
+
 </div>

@@ -28,9 +28,17 @@ namespace DayDramaing.Domain.Migrations
             //    );
             //
 
-            if (context.WebContents.Count() == 0)
+            var content = context.WebContents.ToList();
+            var homeIntro = content.FirstOrDefault(x => x.Name == "HomeIntro");
+            if (homeIntro == null)
             {
-                context.WebContents.Add(new WebContent() { Name = "Intro", RawHTML = "Intro" });
+                context.WebContents.Add(new WebContent() { Name = "HomeIntro", RawHTML = "<p>Intro</p>" });
+            }
+
+            var HomeTitle = content.FirstOrDefault(x => x.Name == "HomeTitle");
+            if (HomeTitle == null)
+            {
+                context.WebContents.Add(new WebContent() { Name = "HomeTitle", RawHTML = "Home Title" });
             }
 
             context.SaveChanges();
