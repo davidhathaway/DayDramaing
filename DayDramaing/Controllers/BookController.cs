@@ -19,7 +19,7 @@ namespace DayDramaing.Controllers
             return View(new BookModel());
         }
 
-        [CaptchaValidatorAttribute]
+        //[CaptchaValidatorAttribute]
         [HttpPost]
         public ActionResult Index(BookModel model)
         {

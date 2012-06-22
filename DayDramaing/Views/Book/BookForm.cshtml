@@ -2,7 +2,15 @@
 
 @using (Html.BeginForm("Index", "Book"))
 {
-    @Html.ValidationSummary(true)
+     if (!ViewData.ModelState.IsValid)
+     {
+            <div id="errors" class="ui-widget bottom-margin">
+		        <div style="padding: 0.7em;" class="ui-state-error ui-corner-all"> 	
+                    @Html.ValidationSummary(false, "Error. Please correct the errors and try again.")
+		        </div>
+	        </div>
+     }
+
     <fieldset>
         <legend>Book</legend>
 

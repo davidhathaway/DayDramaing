@@ -294,3 +294,7 @@ input[type="text"].input-validation-error, input[type="password"].input-validati
 .button {
 	margin : 1em 0 1em 0em;
 }
+
+#errors {
+	margin: 1em;
+}
