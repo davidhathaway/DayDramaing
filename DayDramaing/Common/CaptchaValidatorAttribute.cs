@@ -12,16 +12,14 @@ namespace DayDramaing.Common
         private const string CHALLENGE_FIELD_KEY = "recaptcha_challenge_field";
         private const string RESPONSE_FIELD_KEY = "recaptcha_response_field";
 
-
-        private const string PRIVATE_KEY = ConfigurationManager.AppSettings["RecaptchaPrivate"];
-
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            var privateKey = ConfigurationManager.AppSettings["RecaptchaPrivate"];
             var captchaChallengeValue = filterContext.HttpContext.Request.Form[CHALLENGE_FIELD_KEY];
             var captchaResponseValue = filterContext.HttpContext.Request.Form[RESPONSE_FIELD_KEY];
             var captchaValidtor = new Recaptcha.RecaptchaValidator
                                       {
-                                          PrivateKey = PRIVATE_KEY,
+                                          PrivateKey = privateKey,
                                           RemoteIP = filterContext.HttpContext.Request.UserHostAddress,
                                           Challenge = captchaChallengeValue,
                                           Response = captchaResponseValue
