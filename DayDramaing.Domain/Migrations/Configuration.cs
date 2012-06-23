@@ -5,6 +5,7 @@ namespace DayDramaing.Domain.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
     using DayDramaing.Domain.Models;
+    using Innovations.Core.Security;
 
     public sealed class Configuration : DbMigrationsConfiguration<DayDramaing.Domain.Models.DayDramaingDBContext>
     {
@@ -15,18 +16,18 @@ namespace DayDramaing.Domain.Migrations
 
         protected override void Seed(DayDramaing.Domain.Models.DayDramaingDBContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            var adminName = "Administrator";
+            
+            var adminPermission = new Permission() { PermissionName = adminName };
+            context.Permissions.AddOrUpdate(x => x.PermissionName, adminPermission);
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            var adminRole = new Role() { RoleName = adminName };
+            adminRole.Permissions.Add(adminPermission);
+
+            context.Roles.AddOrUpdate(x => x.RoleName, adminRole);
+
+            var user =  new User() {Username = adminName, Role=adminRole, Email = "info@daydrama-ing.co.uk", Password = PasswordHash.HashPassword("daydrama-ing_FFGGHH") };
+            context.Users.AddOrUpdate(x=>x.Username, user );
 
             var content = context.WebContents.ToList();
             var homeIntro = content.FirstOrDefault(x => x.Name == "HomeIntro");
