@@ -16,6 +16,7 @@ namespace DayDramaing.Controllers
         // GET: /Account/LogOn
         public ActionResult LogOn()
         {
+            var errorOnPurpopse;
             return View();
         }
 
