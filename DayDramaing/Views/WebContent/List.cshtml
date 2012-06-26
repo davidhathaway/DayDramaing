@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DayDramaing.Models.WebContentResultsModel>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<div class="page-title intro grid_16">
+    <h2>Web Content Listed</h2>
+</div>
+
+<div id="list" class="single-col grid_16">
+
+    <table>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WebContentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.WebContentId  })
+            </td>
+        </tr>
+    }
+
+    </table>
+
+</div>
+
+
+<div class="single-col grid_16">
+
+    <p>
+    @Html.ActionLink("Admin Area", "Index", "Admin")
+    </p>
+</div>
+

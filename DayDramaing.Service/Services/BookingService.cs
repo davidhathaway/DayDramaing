@@ -14,8 +14,15 @@ namespace DayDramaing.Service.Services
     }
     public class BookingService : ServiceBase<Booking,BookingRepository>, IBookingService
     {
+        public BookingService(IModelState modelState)
+            : base(modelState)
+        {
+
+        }
+
         protected override BookingRepository CreateRepository()
         {
+    
             return new BookingRepository(this.ModelState.User);
         }
 

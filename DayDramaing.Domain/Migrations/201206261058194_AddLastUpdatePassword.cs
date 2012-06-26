@@ -6,7 +6,7 @@ namespace DayDramaing.Domain.Migrations
     {
         public override void Up()
         {
-            AddColumn("Users", "LastUpdatePassword", c => c.DateTime(nullable: false));
+            AddColumn("Users", "LastUpdatePassword", c => c.DateTime(nullable: true));
         }
         
         public override void Down()

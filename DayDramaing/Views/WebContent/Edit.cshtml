@@ -1,0 +1,49 @@
+﻿@model DayDramaing.Models.WebContentModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="page-title intro grid_16">
+    <h2>Edit Web Content</h2>
+</div>
+
+
+<div id="edit" class="single-col grid_16">
+
+@using (Html.BeginForm()) {
+    if (!ViewData.ModelState.IsValid)
+     {
+            <div id="errors" class="ui-widget bottom-margin">
+		        <div style="padding: 0.7em;" class="ui-state-error ui-corner-all"> 	
+                    @Html.ValidationSummary(false, "Error. Please correct the errors and try again.")
+		        </div>
+	        </div>
+     }
+    <fieldset>
+        <legend>Edit Content</legend>
+
+        @Html.HiddenFor(x => x.WebContentId)
+        @Html.HiddenFor(x => x.Name)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Content)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Content)
+            @Html.ValidationMessageFor(model => model.Content)
+        </div>
+
+        <div class="editor-field">
+            <input type="submit" value="Save" />
+        </div>
+        
+    </fieldset>
+}
+
+</div>
+
+<div class="single-col grid_16">
+    <p>@Html.ActionLink("Back to List", "List")</p>
+</div>

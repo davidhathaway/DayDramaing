@@ -22,6 +22,8 @@
     <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 
+
+
 </head>
     <body id="page-home">
 
@@ -46,6 +48,12 @@
                             <li id="about">@Html.ActionLink("About","About","Home")</li>
                             <li id="book">@Html.ActionLink("Book","Index","Book")</li>
                             <li id="contact">@Html.ActionLink("Contact","Contact","Home")</li>
+                           
+                            @if (Context.User.Identity.IsAuthenticated)
+                            {
+                                <li id="admin">@Html.ActionLink("Admin", "Index", "Admin")</li>
+                            }
+
                         </ul>
                     </div>
 
@@ -64,7 +72,30 @@
 
         <div id="footer">
             <div class="container_16"> 
-               <div class="grid_8 alpha">Day drama-ing Copyright 2012</div><div class="grid_omega"></div>
+               <div  id="copyright" class="grid_6">
+                <p>All Content Copyright &copy; <strong>Katy Weir</strong> 2012 &mdash; 2012.</p>
+               </div>
+               <div id="links-credit" class="grid_10">
+                
+                    <ul>
+                        <li>@Html.ActionLink("About","About","Home")</li>
+             
+                        <li>@Html.ActionLink("Contact","Contact","Home")</li>
+
+                        
+
+                        @if (Context.User.Identity.IsAuthenticated)
+                        {
+                            <li id="admin">@Html.ActionLink("Admin", "Index", "Admin")</li>
+                            <li>@Html.ActionLink("Log off", "LogOff", "Account")</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Login", "LogOn", "Account")</li>
+                        }
+                        
+                    </ul>
+               </div>
             </div>
             <br clear="all">
         </div>

@@ -1,0 +1,69 @@
+﻿@model DayDramaing.Models.DisplayBookModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="page-title intro grid_16">
+    <h2>Booking Details</h2>
+</div>
+
+<div id="detail" class="single-col grid_16">
+
+    <fieldset>
+        <legend>Display booking</legend>
+
+        <div class="display-label">Id</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.BookingId)
+        </div>
+
+        <div class="display-label">Name</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+
+        <div class="display-label">Email</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+
+        <div class="display-label">Telephone</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Telephone)
+        </div>
+
+        <div class="display-label">Name Of School</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NameOfSchool)
+        </div>
+
+        <div class="display-label">Location</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.YourLocation)
+        </div>
+
+        <div class="display-label">What they need</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.What)
+        </div>
+
+        <div class="display-label">When they need it</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.When)
+        </div>
+
+        <div class="display-label">Created On</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CreatedOn)
+        </div>
+
+    </fieldset>
+
+</div>
+
+<div class="single-col grid_16">
+    <p>
+        @Html.ActionLink("Back to List", "List")
+    </p>
+</div>

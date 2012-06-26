@@ -12,28 +12,11 @@ namespace DayDramaing.Domain.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ApplyMigrations();
+            AutomaticMigrationsEnabled = true;
+         
         }
 
-        private void ApplyMigrations()
-        {
-            var migrator = new DbMigrator(this);
-           
-            List<string> migrations = new List<string>();
-
-            migrations.Add("201206261058194_AddLastUpdatePassword");
-
-            var target = migrator.GetDatabaseMigrations();
-
-            foreach (var migration in migrations)
-	        {
-                if (!target.Any(x => x == migration))
-                {
-                    migrator.Update(migration);
-                }
-	        }
-        }
+   
 
         protected override void Seed(DayDramaing.Domain.Models.DayDramaingDBContext context)
         {
