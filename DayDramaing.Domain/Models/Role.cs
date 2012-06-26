@@ -10,5 +10,9 @@ namespace DayDramaing.Domain.Models
         public virtual int RoleId { get; set; }
         public string RoleName { get; set; }
         public virtual ICollection<Permission> Permissions { get; set; }
+        public Role()
+        {
+            Permissions = new List<Permission>();
+        }
     }
 }
