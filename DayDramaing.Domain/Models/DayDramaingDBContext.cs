@@ -23,6 +23,5 @@ namespace DayDramaing.Domain.Models
 
     public class DayDramaingInitialiser : MigrateDatabaseToLatestVersion<DayDramaingDBContext, Configuration>
     {
-
     }
 }

@@ -16,8 +16,6 @@ namespace DayDramaing.Domain.Migrations
          
         }
 
-   
-
         protected override void Seed(DayDramaing.Domain.Models.DayDramaingDBContext context)
         {
             var adminName = "Administrator";
@@ -43,9 +41,7 @@ namespace DayDramaing.Domain.Migrations
                 };
                 context.Users.Add(user);
             }
-
             var content = context.WebContents.ToList();
-
             var homeIntro = content.FirstOrDefault(x => x.Name == "Home Intro");
             if (homeIntro == null)
             {
