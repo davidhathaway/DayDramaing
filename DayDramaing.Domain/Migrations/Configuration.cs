@@ -41,17 +41,33 @@ namespace DayDramaing.Domain.Migrations
             context.Users.AddOrUpdate(x=>x.Username, user );
 
             var content = context.WebContents.ToList();
+
             var homeIntro = content.FirstOrDefault(x => x.Name == "HomeIntro");
             if (homeIntro == null)
             {
                 context.WebContents.Add(new WebContent() { Name = "HomeIntro", RawHTML = "<p>Intro</p>" });
             }
+            else
+            {
+                homeIntro.Name = "Home Intro";
+            }
 
-            var HomeTitle = content.FirstOrDefault(x => x.Name == "HomeTitle");
-            if (HomeTitle == null)
+            var homeTitle = content.FirstOrDefault(x => x.Name == "HomeTitle");
+            if (homeTitle == null)
             {
                 context.WebContents.Add(new WebContent() { Name = "HomeTitle", RawHTML = "Home Title" });
             }
+            else
+            {
+                homeTitle.Name = "Home Title";
+            }
+
+            var deleteIntro = content.Where(x => x.Name == "Intro").FirstOrDefault();
+            if (deleteIntro != null)
+            {
+                context.WebContents.Remove(deleteIntro);
+            }
+
 
             context.SaveChanges();
 
