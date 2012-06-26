@@ -57,6 +57,10 @@
   <ItemGroup>
     <Compile Include="DayDramaingMembershipProvider.cs" />
     <Compile Include="DayDramaingRoleProvider.cs" />
+    <Compile Include="Migrations\201206261058194_AddLastUpdatePassword.cs" />
+    <Compile Include="Migrations\201206261058194_AddLastUpdatePassword.Designer.cs">
+      <DependentUpon>201206261058194_AddLastUpdatePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\DayDramaingDBContext.cs" />

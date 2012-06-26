@@ -6,14 +6,15 @@ using System.Web.Mvc;
 
 namespace DayDramaing.Controllers
 {
-    [Authorize]
-    public class AdminController : Controller
+    public class WebContentController : Controller
     {
         //
-        // GET: /Admin/
+        // GET: /WebContent/
+
         public ActionResult Index()
         {
             return View();
         }
+
     }
 }

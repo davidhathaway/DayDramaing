@@ -6,12 +6,33 @@ namespace DayDramaing.Domain.Migrations
     using System.Linq;
     using DayDramaing.Domain.Models;
     using Innovations.Core.Security;
+    using System.Collections.Generic;
 
     public sealed class Configuration : DbMigrationsConfiguration<DayDramaing.Domain.Models.DayDramaingDBContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
+            ApplyMigrations();
+        }
+
+        private void ApplyMigrations()
+        {
+            var migrator = new DbMigrator(this);
+           
+            List<string> migrations = new List<string>();
+
+            migrations.Add("201206261058194_AddLastUpdatePassword");
+
+            var target = migrator.GetDatabaseMigrations();
+
+            foreach (var migration in migrations)
+	        {
+                if (!target.Any(x => x == migration))
+                {
+                    migrator.Update(migration);
+                }
+	        }
         }
 
         protected override void Seed(DayDramaing.Domain.Models.DayDramaingDBContext context)
@@ -26,7 +47,14 @@ namespace DayDramaing.Domain.Migrations
 
             context.Roles.AddOrUpdate(x => x.RoleName, adminRole);
 
-            var user =  new User() {Username = adminName, Role=adminRole, Email = "info@daydrama-ing.co.uk", Password = PasswordHash.HashPassword("daydrama-ing_FFGGHH") };
+            var user =  new User()
+            {
+                Username = adminName, 
+                Role=adminRole, 
+                Email = "info@daydrama-ing.co.uk", 
+                Password = PasswordHash.HashPassword("daydrama-ing_FFGGHH"), 
+                LastUpdatePassword = DateTime.Now 
+            };
             context.Users.AddOrUpdate(x=>x.Username, user );
 
             var content = context.WebContents.ToList();

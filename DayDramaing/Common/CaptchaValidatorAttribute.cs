@@ -30,6 +30,12 @@ namespace DayDramaing.Common
 	        // this will push the result value into a parameter in our Action
             filterContext.ActionParameters["CaptchaValid"] = recaptchaResponse.IsValid;
 
+            if (!recaptchaResponse.IsValid && filterContext.Controller is Controller) 
+            {
+                var controller = filterContext.Controller as Controller;
+                controller.ModelState.AddModelError("CaptchaValid", "Captcha wasn't recognised please try again.");
+            }
+
             base.OnActionExecuting(filterContext);
         }
     }
