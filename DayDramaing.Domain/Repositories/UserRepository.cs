@@ -55,8 +55,16 @@ namespace DayDramaing.Domain.Repositories
 
         public bool ValidateUser(string username, string password)
         {
-            var user = FindByUsername(username);
-            return PasswordHash.ValidatePassword(password, user.Password);
+            try
+            {
+                var user = FindByUsername(username);
+                if (user == null) { return false; }
+                return PasswordHash.ValidatePassword(password, user.Password);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public void UpdateUser(System.Web.Security.MembershipUser user)
