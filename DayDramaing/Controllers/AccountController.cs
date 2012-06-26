@@ -58,6 +58,39 @@ namespace DayDramaing.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [Authorize]
+        public ActionResult ChangePassword()
+        {
+            var model = new ChangePasswordModel();
+            return View(model);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult ChangePassword(ChangePasswordModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var userName = User.Identity.Name;
+                if (Membership.Provider.ChangePassword(userName, model.OldPassword, model.NewPassword))
+                {
+                    //success
+                    return RedirectToAction("ChangePasswordSuccess");
+                }
+                else
+                {
+                    model = new ChangePasswordModel(); //reset model
+                    ModelState.AddModelError("", "The current password is incorrect or the new password is invalid.");
+                }
+            }
+
+            return View(model);
+
+        }
+        public ActionResult ChangePasswordSuccess()
+        {
+            return View();
+        }
         #region Status Codes
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
         {
@@ -97,5 +130,10 @@ namespace DayDramaing.Controllers
             }
         }
         #endregion
+
+     
+
     }
+
+
 }
