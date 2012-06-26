@@ -24,8 +24,8 @@ namespace DayDramaing.Controllers
             try
             {
              
-                var intro = Service.FindFirst(x => x.Name == "HomeIntro");
-                var pageTitle = Service.FindFirst(x => x.Name == "HomeTitle");
+                var intro = Service.FindFirst(x => x.WebContentId == 2);
+                var pageTitle = Service.FindFirst(x => x.WebContentId == 3);
 
                 if (intro != null && pageTitle!=null)
                 {
