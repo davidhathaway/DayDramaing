@@ -66,6 +66,12 @@ namespace DayDramaing.Domain.Migrations
                 context.WebContents.Add(new WebContent() { Name = "About Area", RawHTML = "<p>About Details here</p>" });
             }
 
+            var testData = context.Bookings.Where(x => x.Email == "david.hathaway@capita.co.uk");
+            foreach (var item in testData)
+            {
+                context.Bookings.Remove(item);
+            }
+
             context.SaveChanges();
 
             base.Seed(context);
