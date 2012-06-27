@@ -44,11 +44,23 @@ namespace DayDramaing.Controllers
 
         public ActionResult About()
         {
+            var aboutArea = Service.FindFirst(x => x.Name == "About Area");
+            if (aboutArea != null)
+            {
+                ViewBag.AboutArea = aboutArea.RawHTML;
+            }
+            
             return View();
         }
 
         public ActionResult Contact()
         {
+            var contactArea = Service.FindFirst(x => x.Name == "Contact Area");
+            if (contactArea != null)
+            {
+                ViewBag.ContactArea = contactArea.RawHTML;
+            }
+
             return View(new ContactModel());
         }
 

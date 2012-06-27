@@ -28,7 +28,7 @@ namespace DayDramaing.Domain.Migrations
 
             context.Roles.AddOrUpdate(x => x.RoleName, adminRole);
 
-            var user = context.Users.Where(x => x.Username == adminName).FirstOrDefault();
+            var user = context.Users.FirstOrDefault(x => x.Username == adminName);
             if (user == null)
             {
                 user = new User()
@@ -41,33 +41,30 @@ namespace DayDramaing.Domain.Migrations
                 };
                 context.Users.Add(user);
             }
-            var content = context.WebContents.ToList();
-            var homeIntro = content.FirstOrDefault(x => x.Name == "Home Intro");
+
+            var homeIntro = context.WebContents.FirstOrDefault(x => x.Name == "Home Intro");
             if (homeIntro == null)
             {
                 context.WebContents.Add(new WebContent() { Name = "Home Intro", RawHTML = "<p>Intro</p>" });
             }
-            else
-            {
-                homeIntro.Name = "Home Intro";
-            }
 
-            var homeTitle = content.FirstOrDefault(x => x.Name == "Home Title");
+            var homeTitle = context.WebContents.FirstOrDefault(x => x.Name == "Home Title");
             if (homeTitle == null)
             {
                 context.WebContents.Add(new WebContent() { Name = "Home Title", RawHTML = "Home Title" });
             }
-            else
+
+            var contactArea = context.WebContents.FirstOrDefault(x => x.Name == "Contact Area");
+            if (contactArea == null)
             {
-                homeTitle.Name = "Home Title";
+                context.WebContents.Add(new WebContent() { Name = "Contact Area", RawHTML = "<p>Contact Details here</p>" });
             }
 
-            var deleteIntro = content.Where(x => x.Name == "Intro").FirstOrDefault();
-            if (deleteIntro != null)
+            var aboutArea = context.WebContents.FirstOrDefault(x => x.Name == "About Area");
+            if (aboutArea == null)
             {
-                context.WebContents.Remove(deleteIntro);
+                context.WebContents.Add(new WebContent() { Name = "About Area", RawHTML = "<p>About Details here</p>" });
             }
-
 
             context.SaveChanges();
 
